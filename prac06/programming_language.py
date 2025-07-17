@@ -2,15 +2,15 @@
 
 
 class ProgrammingLanguage:
-    def __init__(self,name,type,reflection,year):
+    def __init__(self,name,typing,reflection,year):
         self.name = name
-        self.type=type
+        self.typing=typing
         self.year=year
         self.reflection = reflection
 
     def is_dynamic(self):
-        return self.type == 'Dynamic'
+        return self.typing == 'Dynamic'
 
     def __str__(self):
-        return (f"{self.name}, {self.type} Typing, Reflection={self.reflection},"
+        return (f"{self.name}, {self.typing} Typing, Reflection={self.reflection},"
                 f" First appeared in {self.year}")
