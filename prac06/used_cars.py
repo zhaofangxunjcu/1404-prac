@@ -9,15 +9,16 @@ from car import Car
 
 def main():
     """Demo test code to show how to use car class."""
-    limo = Car(100)
+
     # my_car = Car(180)
     # my_car.drive(30)
     # print(f"Car has fuel: {my_car.fuel}")
     # print(my_car)
+
+    limo = Car("Limo", 100)
     limo.add_fuel(20)
-    # print(f"Car has fuel: {limo.fuel}")
+    print(f"Limo fuel after adding: {limo.fuel}")
     limo.drive(115)
-
-
+    print(limo)
 
 main()
