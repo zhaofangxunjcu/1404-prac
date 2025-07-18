@@ -1,10 +1,16 @@
 import csv
 from guitar import Guitar
 def main():
+    # guitars = load_guitars("guitars.csv")
+    # print("These are the guitars we have:")
+    # for guitar in guitars:
+    #     print(guitar)
     guitars = load_guitars("guitars.csv")
-    print("These are the guitars we have:")
-    for guitar in guitars:
-        print(guitar)
+    guitars.sort()
+    for g in guitars:
+        print(g)
+
+
 def load_guitars(filename):
     """read csv"""
     guitars = []
