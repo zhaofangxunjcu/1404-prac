@@ -1,0 +1,40 @@
+<ConverterLayout>:
+    orientation: 'vertical'
+    BoxLayout:
+
+
+        TextInput:
+            id: input_miles
+            text: '0'
+            multiline: False
+            input_filter: 'float'
+            size_hint_x: 0.8
+
+        BoxLayout:
+            size_hint_x: 0.2
+            orientation: 'vertical'
+
+
+            Button:
+                text: "Up"
+
+                on_press: root.increase()
+
+            Button:
+                text: "Down"
+                on_press: root.decrease()
+
+    Button:
+        text: "Convert miles to km"
+        on_press: root.convert()
+
+    Label:
+        id: output_km
+        text: "0.00000"
+        color: (1, 1, 0, 1)
+        canvas.before:
+            Color:
+                rgba: 0, 0, 0, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
