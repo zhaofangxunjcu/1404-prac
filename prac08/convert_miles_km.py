@@ -1,40 +1,36 @@
 from kivy.app import App
 from kivy.lang import Builder
-from kivy.uix.boxlayout import BoxLayout
-
-Builder.load_file('convert_miles_km.kv')
-
-
-class ConverterLayout(BoxLayout):
+from kivy.properties import StringProperty
+class Covertmileskm(App):
+    message = StringProperty()
+    def build(self):
+        """Construct the app."""
+        self.title = "Convert miles to km"
+        self.root = Builder.load_file('convert_miles_km.kv')
+        self.message = ""
+        return self.root
     def convert(self):
         try:
-            miles = float(self.ids.input_miles.text)
+            miles = float(self.root.ids.input_miles.text)
             km = miles * 1.60934
-            self.ids.output_km.text = f'{km:.5f}'
+            self.root.ids.output_km.text = f'{km:.5f}'
         except ValueError:
-            self.ids.output_km.text = 'Invalid input'
+            self.root.ids.output_km.text = '0.0'
 
     def increase(self):
         try:
-            value = float(self.ids.input_miles.text)
+            value = float(self.root.ids.input_miles.text)
         except ValueError:
             value = 0
         value += 1
-        self.ids.input_miles.text = str(int(value))
+        self.root.ids.input_miles.text = str(int(value))
 
     def decrease(self):
         try:
-            value = float(self.ids.input_miles.text)
+            value = float(self.root.ids.input_miles.text)
         except ValueError:
             value = 0
         value -= 1
-        self.ids.input_miles.text = str(int(value))
+        self.root.ids.input_miles.text = str(int(value))
 
-
-class MilesToKmApp(App):
-    def build(self):
-        return ConverterLayout()
-
-
-if __name__ == '__main__':
-    MilesToKmApp().run()
+Covertmileskm().run()

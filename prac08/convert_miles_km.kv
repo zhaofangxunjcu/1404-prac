@@ -1,36 +1,44 @@
-<ConverterLayout>:
-    orientation: 'vertical'
-    BoxLayout:
+#:kivy 2.1.0
 
+BoxLayout:
+    orientation: 'vertical'
+
+    BoxLayout:
+        size_hint_y: 0.25
+        orientation: 'horizontal'
 
         TextInput:
             id: input_miles
             text: '0'
+            font_size: 48
             multiline: False
             input_filter: 'float'
             size_hint_x: 0.8
 
         BoxLayout:
-            size_hint_x: 0.2
             orientation: 'vertical'
-
+            size_hint_x: 0.2
+            spacing: 5
 
             Button:
                 text: "Up"
-
-                on_press: root.increase()
+                on_press: app.increase()
 
             Button:
                 text: "Down"
-                on_press: root.decrease()
+                on_press: app.decrease()
 
     Button:
         text: "Convert miles to km"
-        on_press: root.convert()
+        size_hint_y: 0.15
+        font_size: 28
+        on_press: app.convert()
 
     Label:
         id: output_km
         text: "0.00000"
+        size_hint_y: 0.35
+        font_size: 48
         color: (1, 1, 0, 1)
         canvas.before:
             Color:
