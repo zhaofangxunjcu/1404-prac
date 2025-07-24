@@ -1,5 +1,5 @@
 import random
-from car import Car  # Only needed if you're using the Car class from another file named car.py
+from car import Car
 
 class UnreliableCar(Car):
     """Represent a car that may not always drive when asked."""
