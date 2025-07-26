@@ -36,7 +36,9 @@ def display_menu():
     print("q)uit, c)hoose taxi, d)rive")
 
 def display_taxis(taxis):
-
+    print("Taxis available:")
+    for i, taxi in enumerate(taxis):
+        print(f"{i} - {taxi}")
 
 def choose_taxi(taxis):
     non_admin_error_codes
