@@ -1,5 +1,3 @@
-from pywin32_testutil import non_admin_error_codes
-
 from taxi import Taxi
 from silver_service_taxi import SilverServiceTaxi
 def main():
@@ -34,12 +32,10 @@ def main():
         print(f"{i} - {taxi}")
 def display_menu():
     print("q)uit, c)hoose taxi, d)rive")
-
 def display_taxis(taxis):
     print("Taxis available:")
     for i, taxi in enumerate(taxis):
         print(f"{i} - {taxi}")
-
 def choose_taxi(taxis):
     display_taxis(taxis)
     try:
@@ -63,3 +59,5 @@ def drive_taxi(taxi):
         print("Invalid distance")
         return 0
 
+if __name__ == "__main__":
+    main()
