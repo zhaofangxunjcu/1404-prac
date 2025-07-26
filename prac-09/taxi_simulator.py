@@ -41,8 +41,25 @@ def display_taxis(taxis):
         print(f"{i} - {taxi}")
 
 def choose_taxi(taxis):
-    non_admin_error_codes
+    display_taxis(taxis)
+    try:
+        choice = int(input("Choose taxi: "))
+        if 0 <= choice < len(taxis):
+            return taxis[choice]
+        else:
+            print("Invalid taxi choice")
+            return None
+    except ValueError:
+        print("Invalid taxi choice")
+        return None
 def drive_taxi(taxi):
     try:
+        distance = float(input("Drive how far? "))
+        distance_driven = taxi.drive(distance)
+        cost = taxi.get_fare()
+        print(f"Your {taxi.name} trip cost you ${cost:.2f}")
+        return cost
+    except ValueError:
+        print("Invalid distance")
         return 0
 
