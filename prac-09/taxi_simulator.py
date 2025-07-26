@@ -1,6 +1,9 @@
 from taxi import Taxi
 from silver_service_taxi import SilverServiceTaxi
 def main():
+    """
+       Run the taxi program;Allows the user to choose taxis, drive a selected taxi for a specified distance,
+       and track the cumulative bill until quitting."""
     taxis = [Taxi("Prius", 100), SilverServiceTaxi("Limo", 100, 2), SilverServiceTaxi("Hummer", 200, 4)]
     bill = 0.0
     current_taxi = None
@@ -31,12 +34,15 @@ def main():
     for i, taxi in enumerate(taxis):
         print(f"{i} - {taxi}")
 def display_menu():
+    """Show the menu"""
     print("q)uit, c)hoose taxi, d)rive")
 def display_taxis(taxis):
+    """List all the taxis."""
     print("Taxis available:")
     for i, taxi in enumerate(taxis):
         print(f"{i} - {taxi}")
 def choose_taxi(taxis):
+    """Prompt the user to select a taxi from the list."""
     display_taxis(taxis)
     try:
         choice = int(input("Choose taxi: "))
@@ -49,6 +55,9 @@ def choose_taxi(taxis):
         print("Invalid taxi choice")
         return None
 def drive_taxi(taxi):
+    """
+        Prompt for distance to drive, perform the drive, and report cost
+    """
     try:
         distance = float(input("Drive how far? "))
         distance_driven = taxi.drive(distance)
