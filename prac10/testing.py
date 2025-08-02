@@ -15,11 +15,11 @@ def repeat_string(s, n):
 def is_long_word(word, length=5):
     """
     Determine if the word is as long or longer than the length passed in
-     is_long_word("not")
+    >>> is_long_word("not")
     False
-     is_long_word("supercalifrag")
+    >>> is_long_word("supercalifrag")
     True
-    is_long_word("Python", 6)
+    >>> is_long_word("Python", 6)
     True
     """
     return len(word) > length
@@ -52,7 +52,7 @@ def run_tests():
 
 # TODO: 3. Uncomment the following line and run the doctests
 # (PyCharm may see your >>> doctest comments and run doctests anyway.)
-# doctest.testmod()
+doctest.testmod()
 
 # TODO: 4. Fix the failing is_long_word function
 # (Don't change the tests, change the function!)
