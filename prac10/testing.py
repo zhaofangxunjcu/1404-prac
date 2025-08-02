@@ -52,7 +52,7 @@ def run_tests():
 
 # TODO: 3. Uncomment the following line and run the doctests
 # (PyCharm may see your >>> doctest comments and run doctests anyway.)
-doctest.testmod()
+#doctest.testmod()
 
 # TODO: 4. Fix the failing is_long_word function
 # (Don't change the tests, change the function!)
@@ -66,3 +66,16 @@ doctest.testmod()
 # and one more that you decide is a useful test.
 # Run your doctests and watch the tests fail.
 # Then write the body of the function so that the tests pass.
+def sentence_test(s):
+    """Return str starting with capital and end with a single full stop.
+
+    >>> sentence_test('cp1404')
+    'Cp1404.'
+    >>> sentence_test('final.')
+    'Final.'
+    >>> sentence_test('gOODBYE')
+    'Goodbye.'
+    """
+    pass
+doctest.testmod()
+
