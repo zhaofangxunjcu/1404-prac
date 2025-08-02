@@ -14,7 +14,7 @@ def main():
             print(e.options)
         except PageError:
             print(f'Page id "{title}" does not match any pages. Try another id!')
-        title = input("\nEnter page title: ").strip()  # 提示用户继续输入
+        title = input("\nEnter page title: ").strip()
 
     print("Thank you.")
 
