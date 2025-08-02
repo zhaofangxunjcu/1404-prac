@@ -76,6 +76,9 @@ def sentence_test(s):
     >>> sentence_test('gOODBYE')
     'Goodbye.'
     """
-    pass
+    s = s.strip().capitalize()
+    if not s.endswith('.'):
+        s += '.'
+    return s
 doctest.testmod()
 
